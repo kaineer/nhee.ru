@@ -48,6 +48,6 @@ jobs:
       - name: ls
         run: ls
 
-      # - name: deploy blog
-      #   run:
+      - name: deploy
+        run: scp -R * scp://jino//home/kaineer/hosts/home
 
