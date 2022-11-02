@@ -49,5 +49,5 @@ jobs:
         run: ls
 
       - name: deploy
-        run: scp -R $PWD/* scp://jino//home/kaineer/hosts/home
+        run: scp -R $PWD/* scp://jino//home/kaineer/hosts/html
 
