@@ -42,12 +42,6 @@ jobs:
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/jino"
 
-      - name: pwd
-        run: pwd
-
-      - name: ls
-        run: ls
-
       - name: deploy
         run: scp -R $PWD/* scp://jino//home/kaineer/hosts/html
 

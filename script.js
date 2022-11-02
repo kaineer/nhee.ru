@@ -21,7 +21,7 @@ const sources = [
   source("OTUS DevOps", "https://otus.ru/learning/173394/"),
   source("OTUS infra", "https://github.com/Otus-DevOps-2022-05/kaineer_infra"),
   source("OTUS microservices", "https://github.com/Otus-DevOps-2022-05/kaineer_microservices"),
-  source("MOSH", "https://reg.olimpiada.ru/"),
+  // source("MOSH", "https://reg.olimpiada.ru/"),
   source("Monkey type", "https://monkeytype.com"),
 ];
 
@@ -40,7 +40,7 @@ const updateItems = (value) => {
   });
 
   itemIndex = 0;
-  
+
   const markup = filtered.map((s, i) => {
     return (
       "<li class='list__item text-lg" +
@@ -51,9 +51,9 @@ const updateItems = (value) => {
       "</li>"
     );
   }).join('');
-  
+
   list.innerHTML = markup;
-  
+
   itemCount = filtered.length;
 };
 
@@ -72,7 +72,7 @@ const openByTitle = (title) => {
 const openSelectedUrl = () => {
   if (itemCount > 0) {
     const url = filtered[itemIndex].url;
-    
+
     if (url) {
       openUrl(url);
     }
@@ -86,7 +86,7 @@ input.addEventListener("input", (e) => {
 input.addEventListener("keydown", (e) => {
   const key = e.which;
   const alt = e.altKey;
- 
+
   if (key === 75 && alt && itemIndex > 0) {
     --itemIndex;
     defaultUpdateItems();
@@ -99,7 +99,7 @@ input.addEventListener("keydown", (e) => {
   } else if (key === 40 && itemIndex < itemCount - 1) {
     ++itemIndex;
     defaultUpdateItems();
-  } else if (key === 13) { 
+  } else if (key === 13) {
     openSelectedUrl();
   }
 });
