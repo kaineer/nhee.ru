@@ -43,5 +43,5 @@ jobs:
           ssh-add "$SSH_PATH/jino"
 
       - name: deploy
-        run: scp -R !(*.md,Makefile) scp://jino//home/kaineer/hosts/html
+        run: scp -R !({*.md,Makefile}) scp://jino//home/kaineer/hosts/html
 
