@@ -1,0 +1,43 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.search {
+  width: 100vw;
+  padding: 18px;
+}
+
+.search-input {
+  font-size: 24px;
+  width: 96vw;
+  outline: none;
+}
+.search-input:hover {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+.list__item {
+  width: 100%;
+  padding: 2px 8px;
+  border: solid 1px #999;
+  border-radius: 6px;
+  background-color: #eee;
+  margin-bottom: 4px;
+}
+.list__item:hover {
+  background-color: #ddd;
+}
+.list__item--active {
+  background-color: #ccc;
+}
+.list__item .selection {
+  color: #ddd;
+}
+.item__link {
+  font-size: 12px;
+  line-height: 16px;
+}
