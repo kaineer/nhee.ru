@@ -1,0 +1,52 @@
+body, html {
+  margin: 0; padding: 0;
+}
+
+.search {
+  padding: 8px 4px;
+  margin: auto 0;
+}
+
+.search-input {
+  width: 95%;
+  padding: 8px 4px;
+  margin: 0 16px;
+  border: none;
+  border-bottom: solid 2px #599fa3;
+
+  font-size: 24px;
+}
+
+.search-input:focus {
+  outline: none;
+  border: none;
+  border-bottom: solid 2px #88e5eb;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0;
+}
+
+.list__item {
+  background: #eee;
+  margin-top: 8px;
+  margin-bottom: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: solid 1px #ccc;
+}
+
+.list__item--active {
+  background: #ffe;
+}
+
+.list__item .item__link {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 12px;
+}

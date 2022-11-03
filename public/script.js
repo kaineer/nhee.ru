@@ -41,14 +41,25 @@ const updateItems = (value) => {
 
   itemIndex = 0;
 
+  const attributes = (attrs = {}) => {
+    return Object.keys(attrs).map((k) => {
+      return " " + k + "=" + "\"" + attrs[k] + "\"";
+    }).join("");
+  }
+
+  const tag = (name, attrs = {}) => (content) => {
+    return "<" + name + attributes(attrs) + ">" + content + "</" + name + ">";
+  }
+
   const markup = filtered.map((s, i) => {
-    return (
-      "<li class='list__item container text-lg" +
-      (i == itemIndex ? " list__item--active" : "") +
-      "'>" +
-	"<span class='item__title'>" + s.title + "</span>" +
-	"<p class='item__link'>" + s.url + "</p>" +
-      "</li>"
+    const li = (active) => {
+      return tag("li", { "class": active ?
+        "list__item list__item--active" : "list__item" });
+    }
+
+    return li(i === itemIndex)(
+      tag("span", { "class": "item__title" })(s.title) +
+      tag("p", { "class": "item__link" })(s.url)
     );
   }).join('');
 
