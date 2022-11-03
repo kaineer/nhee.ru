@@ -43,5 +43,5 @@ jobs:
           ssh-add "$SSH_PATH/jino"
 
       - name: deploy
-        run: scp -R * scp://jino//home/kaineer/hosts/html
+        run: scp -R ./public/* scp://jino//home/kaineer/hosts/html
 
