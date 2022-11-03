@@ -43,7 +43,7 @@ const updateItems = (value) => {
 
   const markup = filtered.map((s, i) => {
     return (
-      "<li class='list__item text-lg" +
+      "<li class='list__item container text-lg" +
       (i == itemIndex ? " list__item--active" : "") +
       "'>" +
 	"<span class='item__title'>" + s.title + "</span>" +
