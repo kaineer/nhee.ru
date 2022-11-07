@@ -14,7 +14,7 @@ const sources = [
   source("ZSfond", "https://zsfond.ru/"),
   source("Whatsapp", "https://web.whatsapp.com/"),
   source("DevDocs", "https://devdocs.io/"),
-  source("Node package manager", "https://npmjs.com/"),
+  source("Node package manager", "https://npm.io/"),
   source("GitHub", "https://github.com/"),
   source("GitLab", "https://gitlab.com/"),
   source("GitLab.Htmlacademy", "https://gitlab.htmlacademy.dev/"),
