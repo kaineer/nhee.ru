@@ -39,8 +39,6 @@ const updateItems = (value) => {
     return s.title.toLowerCase().includes(v) || s.url.includes(v);
   });
 
-  itemIndex = 0;
-
   const attributes = (attrs = {}) => {
     return Object.keys(attrs).map((k) => {
       return " " + k + "=" + "\"" + attrs[k] + "\"";
@@ -90,7 +88,8 @@ const openSelectedUrl = () => {
   }
 }
 
-input.addEventListener("input", (e) => {
+input.addEventListener("input", (/* e */) => {
+  itemIndex = 0;
   updateItems(input.value.trim());
 });
 
@@ -126,9 +125,9 @@ const keyupHandler = (e) => {
   }
 };
 
-// [input, list, document].forEach((el) => {
-//   el.addEventListener("keyup", keyupHandler);
-// });
+[input, list, document].forEach((el) => {
+  el.addEventListener("keyup", keyupHandler);
+});
 
 list.addEventListener("click", (e) => {
   const target = e.target;
@@ -140,7 +139,6 @@ list.addEventListener("click", (e) => {
     }
   }
 });
-
 
 defaultUpdateItems();
 input.focus();
