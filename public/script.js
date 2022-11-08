@@ -25,6 +25,7 @@ const sources = [
   source("Sirius courses", "https://edu.sirius.online"),
   // source("MOSH", "https://reg.olimpiada.ru/"),
   source("Monkey type", "https://monkeytype.com"),
+  source("Anime Go", "https://animego.org"),
 ];
 
 const input = document.querySelector(".search-input");
