@@ -21,6 +21,8 @@ const sources = [
   source("OTUS DevOps", "https://otus.ru/learning/173394/"),
   source("OTUS infra", "https://github.com/Otus-DevOps-2022-05/kaineer_infra"),
   source("OTUS microservices", "https://github.com/Otus-DevOps-2022-05/kaineer_microservices"),
+  source("Sirius main site", "https://sochisirius.ru/"),
+  source("Sirius courses", "https://edu.sirius.online"),
   // source("MOSH", "https://reg.olimpiada.ru/"),
   source("Monkey type", "https://monkeytype.com"),
 ];
@@ -93,31 +95,48 @@ input.addEventListener("input", (/* e */) => {
   updateItems(input.value.trim());
 });
 
+const keysDown = (key, alt) => {
+  return (key === 75 && alt) || key === 38;
+}
+
+const keysUp = (key, alt) => {
+  return (key === 74 && alt) || key === 40;
+}
+
+const keysGo = (key, alt) => {
+  return (key === 72 && alt) || key === 13;
+}
+
+const keysEsc = (key) => {
+  return key === 27;
+}
+
 input.addEventListener("keydown", (e) => {
   const key = e.which;
   const alt = e.altKey;
 
-  if (key === 75 && alt && itemIndex > 0) {
+  if (keysDown(key, alt)) {
     --itemIndex;
     defaultUpdateItems();
-  } else if (key === 38 && itemIndex > 0) {
-    --itemIndex;
-    defaultUpdateItems();
-  } else if (key === 74 && alt && itemIndex < itemCount - 1) {
+  } else if (keysUp(key, alt)) {
     ++itemIndex;
     defaultUpdateItems();
-  } else if (key === 40 && itemIndex < itemCount - 1) {
-    ++itemIndex;
-    defaultUpdateItems();
-  } else if (key === 13) {
+  } else if (keysGo(key, alt)) {
     openSelectedUrl();
+  } else if (keysEsc(key)) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    input.value = "";
   }
-});
+}, true);
 
 const keyupHandler = (e) => {
   const key = e.which;
 
   if (key === 27) {
+    e.preventDefault();
+
     input.value = "";
     updateItems("");
 
@@ -125,9 +144,17 @@ const keyupHandler = (e) => {
   }
 };
 
-[input, list, document].forEach((el) => {
-  el.addEventListener("keyup", keyupHandler);
+[list, document].forEach((el) => {
+  el.addEventListener("keyup", keyupHandler, true);
 });
+
+input.addEventListener("keydown", (e) => {
+  if (e.which === 27) {
+    e.preventDefault();
+    input.value = "";
+    updateItems("");
+  }
+}, true);
 
 list.addEventListener("click", (e) => {
   const target = e.target;
