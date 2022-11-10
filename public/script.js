@@ -26,6 +26,7 @@ const sources = [
   // source("MOSH", "https://reg.olimpiada.ru/"),
   source("Monkey type", "https://monkeytype.com"),
   source("Anime Go", "https://animego.org"),
+  source("Docker docs", "https://docs.docker.com/"),
 ];
 
 const input = document.querySelector(".search-input");
