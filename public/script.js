@@ -27,7 +27,6 @@ const sources = [
   source("Monkey type", "https://monkeytype.com"),
   source("Anime Go", "https://animego.org"),
   source("Docker docs", "https://docs.docker.com/"),
-  source("test", "/npm/"),
 ];
 
 const input = document.querySelector(".search-input");
