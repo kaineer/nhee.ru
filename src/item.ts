@@ -1,6 +1,6 @@
 // src/item.ts
 
-import { tag } from "./tag";
+import { tag } from "./markup";
 import { Link } from "./links";
 
 export const render = (

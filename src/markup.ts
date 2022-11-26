@@ -1,17 +1,20 @@
 // src/tag.ts
 
 type Attributes = {
-  [id: string]: (string | number)
+  [id: string]: (string | number | boolean)
 };
 
-const attributes = (attrs: Attributes) => {
+const attributes = (
+  attrs: Attributes
+) => {
   return Object.keys(attrs).map((k) => {
     return " " + k + "=" + "\"" + attrs[k] + "\"";
   }).join("");
 };
 
 export const tag = (
-  name: string, attrs: Attributes = {}
+  name: string,
+  attrs: Attributes = {}
 ) => (content: string): string => {
   return "<" + name + attributes(attrs) + ">" + content + "</" + name + ">";
 };
