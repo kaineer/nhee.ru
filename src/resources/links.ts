@@ -1,7 +1,8 @@
 // src/resources/links.ts
 
 import { ItemContainer, Link } from "./item-container";
-import { tag, bem } from "../markup";
+import { tag } from "../utils/tag";
+import { bem } from "../utils/bem";
 
 const renderLink = (link: Link, active: boolean): string => {
   const { title, url } = link;
