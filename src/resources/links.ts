@@ -1,10 +1,18 @@
 // src/resources/links.ts
 
 import { ItemContainer, Link } from "./item-container";
-import { tag } from "../markup";
+import { tag, bem } from "../markup";
 
-const renderLink = (link: Link): string => {
-  // TODO: continue from here
+const renderLink = (link: Link, active: boolean): string => {
+  const { title, url } = link;
+
+  const className = bem("list", "item", active ? "active" : []);
+  const attrs = { "class": className };
+
+  return tag("li", attrs)(
+    tag("span", {"class": bem("item", "title")})(title),
+    tag("p", {"class": bem("item", "link")})(url),
+  );
 }
 
 export const source = (title: string, url: string): Link => {
@@ -36,7 +44,9 @@ export const createLinksContainer = (
       }
     },
     render() {
-      return "";
+      return filtered.map((item, i): string => {
+        return renderLink(item, i === activeIndex);
+      }).join("");
     }
   };
 };
