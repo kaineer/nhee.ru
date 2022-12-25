@@ -8,7 +8,7 @@ const sources = [
   source("TweetDesk", "https://tweetdeck.twitter.com/"),
   source("VKontakte", "https://vk.com/"),
   source("Linktree", "https://linktr.ee/kaineer"),
-  source("Eljur", "https://lycreg.urfu.ru/"),
+  source("Eljur [sunts]", "https://lycreg.urfu.ru/"),
   source("LK sunts", "https://lycedu.urfu.ru/login"),
   source("GMail", "https://gmail.com/"),
   source("ZSfond", "https://zsfond.ru/"),

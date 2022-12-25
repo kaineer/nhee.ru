@@ -7,8 +7,9 @@ import { bem } from "../utils/bem";
 const renderLink = (link: Link, active: boolean): string => {
   const { title, url } = link;
 
-  const className = bem("list", "item", active ? "active" : []);
-  const attrs = { "class": className };
+  const attrs = {
+    "class": bem("list", "item", active ? "active" : [])
+  };
 
   return tag("li", attrs)(
     tag("span", {"class": bem("item", "title")})(title),
@@ -25,8 +26,15 @@ export const createLinksContainer = (
 ) => (
   query: string
 ): ItemContainer => {
+  const polish = (raw: string): string => {
+    return raw.toLowerCase();
+  };
+  const matches = (hay: string, needle: string) => {
+    return polish(hay).includes(polish(needle));
+  };
+
   const filtered = links.filter(({ title, url }) => {
-    return title.includes(query) || url.includes(query);
+    return (matches(title, query) || matches(url, query));
   });
 
   let activeIndex = 0;
