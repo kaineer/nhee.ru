@@ -1,7 +1,9 @@
 // src/tag.ts
 
+type AttributeValue = string | number | boolean;
+
 type Attributes = {
-  [id: string]: (string | number | boolean)
+  [id: string]: AttributeValue
 };
 
 const attributes = (
